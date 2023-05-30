@@ -25,50 +25,72 @@ col1, col2, col3 = st.columns([1,1,1])
 with col1:
     st.image(os.path.join('images','dlytica.jpeg'))
 
+def add_bullet_points(text):
+    lines = text.split('\n')  # Split the text into lines
+
+    # Add bullet points to each line
+    bullet_lines = ['• ' + line.strip() for line in lines]
+
+    # Join the lines back together
+    bullet_text = '\n'.join(bullet_lines)
+
+    return bullet_text
 
 def get_message(option):
     messages = {
-        "Docucontext":""""
-        DocuContext (An Intelligent Document Processing) 
-        1/n      
-        2
-        3
-       
+        "What is Docucontext":"""
+            DocuContext (An Intelligent Document Processing).
+            A Cloud-native AI-powered document processing solution.
+            Automates the Extraction and Analysis of unstructured data from various types of documents.
+            Powered by Generative AI ChatGPT.
+        """,
+        "Why we use Docucontext":"""
+            Eliminate manual data entry and transcription errors.
+            Lack of standardization in document formats and layouts.
+            Insufficient search and retrieval capabilities to find and access specific information within them.
+            Challenges in integrating with other software applications and systems.
+            High cost of customer acquisition and retention with limited ability to personalize customer experience.
         
-        """
-         
-          "DocuContext (An Intelligent Document Processing) A Cloud-native AI-powered document processing solution that automate the Extraction and Analysis of unstructured data from various types of documents powered by Generative AI like ChatGPT",
-        "Why Docucontext": "2",
+        """,
         "what we use": "3"
     }
     return messages.get(option, "")
 
 # Set title and options for the dropdown menu
-dropdown_title = "EXPLORE"
-dropdown_options = ["Docucontext", "Why Docucontext", "Option 3"]
+dropdown_title = "**EXPLORE**"
+dropdown_options = ["What is Docucontext", "Why we use Docucontext", "Option 3"]
 
 # Create the dropdown component
 selected_option = st.selectbox(dropdown_title, dropdown_options)
 
 # Display the selected option and the message
 if selected_option:
-    st.write(f"Selected option: {selected_option}")
     message = get_message(selected_option)
-    st.info(message)
+
+
+def add_bullet_points(text):
+    filter=text.lstrip().rstrip()
+    lines = filter.split('\n')  # Split the text into lines
+    # Add bullet points to each line and insert line break tags
+    bullet_lines = ['• ' + line.strip() + '<br>' for line in lines]
+    # Join the lines back together
+    bullet_text = ''.join(bullet_lines)
+
+    return bullet_text
+
+
+# Example usage
+original_text = message
+bullet_text = add_bullet_points(original_text)
+
+styled_text = f'<div style="background-color: rgba(28, 131, 225, 0.1); padding: 20px; border-radius: 10px;">{bullet_text}</div>'
+
+st.markdown(styled_text, unsafe_allow_html=True)
 
 
 
-# Title and tablßßße section
-st.markdown("<h1 style='text-align: center; color: white;'>A simple web application for OpenAI-enabled document search</h1>", unsafe_allow_html=True)
-st.markdown("---")
-st.markdown("<h2 style='text-align: center; color: white;'>Table Title</h2>", unsafe_allow_html=True)
 
-# Example table data
-table_data = [
-    ["Document 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
-    ["Document 2", "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
-    ["Document 3", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."],
-]
+
 
 
 

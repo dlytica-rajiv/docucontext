@@ -87,13 +87,128 @@ styled_text = f'<div style="background-color: rgba(28, 131, 225, 0.1); padding: 
 
 st.markdown(styled_text, unsafe_allow_html=True)
 
+st.markdown(
+    """
+    <style>
+    .btn-primary {
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        font-weight: 400;
+        padding: 0.25rem 0.75rem;
+        border-radius: 0.25rem;
+        margin: 0px;
+        line-height: 1.6;
+        color: inherit;
+        width: auto;
+        user-select: none;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgba(49, 51, 63, 0.2);
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .btn-primary:hover {
+        border: 1px solid rgb(255, 80, 80);;
+        color: black;
+    }
+    a {
+        color: black !important;
+        text-decoration: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div>
+        <a href="/Add_Document">
+            <button type="button" class="btn btn-primary">Add Document</button>
+        </a>
+        <a href="/Document_Viewer">
+            <button type="button" class="btn btn-primary">View Document</button>
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
+st.markdown(
+    """
+    <style>
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            5% { transform: translateY(-10px); }
+            25% { transform: translateY(0); }
+            45% { transform: translateY(-5px); }
+            65% { transform: translateY(0); }
+            100% { transform: translateY(0); }
+        }
 
+        .custom-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            animation: bounce 1s;
+        }
 
+        .custom-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color:rgba(28, 131, 225, 0.1);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
 
+        .custom-button:hover {
+            transform: scale(1.1);
+        }
 
+        .custom-button img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
 
+        .custom-button span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 14px;
+            color: black;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div class="custom-button-container">
+        <a href="/Chat">
+            <div class="custom-button">
+                <img src="https://api.dicebear.com/5.x/bottts/svg?seed=88" alt="Custom Image">
+                <span>Chat</span>
+            </div>
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 

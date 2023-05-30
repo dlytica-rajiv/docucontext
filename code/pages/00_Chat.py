@@ -7,6 +7,12 @@ from streamlit_config import configure_page,remove_footer_menu
 configure_page()
 remove_footer_menu()
 
+
+
+
+
+
+
 def clear_text_input():
     st.session_state['question'] = st.session_state['input']
     st.session_state['input'] = ""

@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'docucontext'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BF8C75002A3641AAAF322639DAB17EE2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4DFB271FBE014E38A400D118190D255B }}

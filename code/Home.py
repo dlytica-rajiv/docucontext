@@ -52,13 +52,13 @@ def get_message(option):
             High cost of customer acquisition and retention with limited ability to personalize customer experience.
         
         """,
-        "what we use": "3"
+        "What we use": "Powered by GPT!"
     }
     return messages.get(option, "")
 
 # Set title and options for the dropdown menu
 dropdown_title = "**EXPLORE**"
-dropdown_options = ["What is Docucontext", "Why we use Docucontext", "Option 3"]
+dropdown_options = ["What is Docucontext", "Why we use Docucontext", "What we use"]
 
 # Create the dropdown component
 selected_option = st.selectbox(dropdown_title, dropdown_options)
@@ -130,85 +130,88 @@ st.markdown(
         <a href="/Document_Viewer">
             <button type="button" class="btn btn-primary">View Document</button>
         </a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-
-st.markdown(
-    """
-    <style>
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            5% { transform: translateY(-10px); }
-            25% { transform: translateY(0); }
-            45% { transform: translateY(-5px); }
-            65% { transform: translateY(0); }
-            100% { transform: translateY(0); }
-        }
-
-        .custom-button-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            animation: bounce 1s;
-        }
-
-        .custom-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color:rgba(28, 131, 225, 0.1);
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
-            position: relative;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .custom-button:hover {
-            transform: scale(1.1);
-        }
-
-        .custom-button img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-        }
-
-        .custom-button span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-weight: bold;
-            font-size: 14px;
-            color: black;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <div class="custom-button-container">
         <a href="/Chat">
-            <div class="custom-button">
-                <img src="https://api.dicebear.com/5.x/bottts/svg?seed=88" alt="Custom Image">
-                <span>Chat</span>
-            </div>
+            <button type="button" class="btn btn-primary">Chat</button>
         </a>
     </div>
     """,
     unsafe_allow_html=True
 )
+
+
+# st.markdown(
+#     """
+#     <style>
+#         @keyframes bounce {
+#             0% { transform: translateY(0); }
+#             5% { transform: translateY(-10px); }
+#             25% { transform: translateY(0); }
+#             45% { transform: translateY(-5px); }
+#             65% { transform: translateY(0); }
+#             100% { transform: translateY(0); }
+#         }
+
+#         .custom-button-container {
+#             position: fixed;
+#             bottom: 20px;
+#             right: 20px;
+#             z-index: 9999;
+#             animation: bounce 1s;
+#         }
+
+#         .custom-button {
+#             display: flex;
+#             align-items: center;
+#             justify-content: center;
+#             background-color:rgba(28, 131, 225, 0.1);
+#             border: none;
+#             cursor: pointer;
+#             padding: 10px;
+#             border-radius: 50%;
+#             width: 80px;
+#             height: 80px;
+#             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+#             position: relative;
+#             transition: transform 0.3s ease-in-out;
+#         }
+
+#         .custom-button:hover {
+#             transform: scale(1.1);
+#         }
+
+#         .custom-button img {
+#             width: 60px;
+#             height: 60px;
+#             object-fit: contain;
+#         }
+
+#         .custom-button span {
+#             position: absolute;
+#             top: 50%;
+#             left: 50%;
+#             transform: translate(-50%, -50%);
+#             font-weight: bold;
+#             font-size: 14px;
+#             color: black;
+#         }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+# st.markdown(
+#     """
+#     <div class="custom-button-container">
+#         <a href="/Chat">
+#             <div class="custom-button">
+#                 <img src="https://api.dicebear.com/5.x/bottts/svg?seed=88" alt="Custom Image">
+#                 <span>Chat</span>
+#             </div>
+#         </a>
+#     </div>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 
 

@@ -2,7 +2,9 @@ import streamlit as st
 from utilities.helper import LLMHelper
 import os
 import traceback
+from streamlit_config import remove_footer_menu
 
+remove_footer_menu()
 def summarize():
     response = llm_helper.get_completion(get_prompt())
     st.session_state['summary'] = response

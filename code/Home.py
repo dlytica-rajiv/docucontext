@@ -1,3 +1,4 @@
+import base64
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -5,7 +6,7 @@ import streamlit as st
 import os
 import traceback
 from utilities.helper import LLMHelper
-from streamlit_config import configure_page,remove_footer_menu
+from streamlit_config import configure_page,remove_footer_menu, get_img_with_href
 
 import logging
 logger = logging.getLogger('azure.core.pipeline.policies.http_logging_policy').setLevel(logging.WARNING)
@@ -20,10 +21,14 @@ configure_page()
 remove_footer_menu()
 
 # Load and display the logo image
+logo_html = get_img_with_href(os.path.join('images','dlytica.jpeg'), 'https://dlytica.com')
 
-col1, col2, col3 = st.columns([1,1,1])
+col1, col2 = st.columns([1,1])
 with col1:
-    st.image(os.path.join('images','dlytica.jpeg'))
+    # st.image(os.path.join('images','dlytica.jpeg'),"",200)
+    st.markdown(logo_html, unsafe_allow_html=True)
+    st.markdown("<b>Here to deliver data driven AI and cloud solutions.</b><br>",unsafe_allow_html=True)
+    # st.text("")
 
 def add_bullet_points(text):
     lines = text.split('\n')  # Split the text into lines
@@ -133,11 +138,16 @@ st.markdown(
         <a href="/Chat">
             <button type="button" class="btn btn-primary">Chat</button>
         </a>
+        <a target="_blank" href="https://forms.office.com/pages/responsepage.aspx?id=PsAfr2kbCUyPmtCeXh2-nxX71AiW0GVAvMIjaiJQpoxUOEkzTkVMS0E2NlVSUzJWSUc0SDZGTjlDUC4u">
+            <button type="button" class="btn btn-primary">Feedback</button>
+        </a>
     </div>
     """,
     unsafe_allow_html=True
 )
 
+
+# st.footer()
 
 # st.markdown(
 #     """

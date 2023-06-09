@@ -18,7 +18,7 @@ def remove_footer_menu():
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             footer:after {
-                content:'© Dlytica Inc.'; 
+                content:'© 2023 | Dlytica Inc.'; 
                 visibility: visible;
                 display: block;
                 position: relative;

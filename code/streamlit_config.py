@@ -4,7 +4,7 @@ import streamlit as st
 import warnings
 
 # Suppress warnings
-warnings.filterwarnings("ignore")
+warnings.simplefilter("ignore", category=DeprecationWarning)
 current_dir = os.path.dirname(os.path.abspath(__file__))
 def configure_page():
     # Page configuration

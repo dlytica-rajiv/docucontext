@@ -57,7 +57,7 @@ def get_message(option):
             High cost of customer acquisition and retention with limited ability to personalize customer experience.
         
         """,
-        "What we use": "Powered by GPT!"
+        "What we use": "Powered by GPT 4 and Azure Cloud."
     }
     return messages.get(option, "")
 
@@ -88,7 +88,7 @@ def add_bullet_points(text):
 original_text = message
 bullet_text = add_bullet_points(original_text)
 
-styled_text = f'<div style="background-color: rgba(28, 131, 225, 0.1); padding: 20px; border-radius: 10px;">{bullet_text}</div>'
+styled_text = f'<div style="background-color: rgb(240, 242, 246); padding: 20px; border-radius: 10px;">{bullet_text}</div>'
 
 st.markdown(styled_text, unsafe_allow_html=True)
 
@@ -138,12 +138,24 @@ st.markdown(
         <a href="/Chat">
             <button type="button" class="btn btn-primary">Chat</button>
         </a>
-        <a target="_blank" href="https://forms.office.com/pages/responsepage.aspx?id=PsAfr2kbCUyPmtCeXh2-nxX71AiW0GVAvMIjaiJQpoxUOEkzTkVMS0E2NlVSUzJWSUc0SDZGTjlDUC4u">
-            <button type="button" class="btn btn-primary">Feedback</button>
-        </a>
     </div>
     """,
     unsafe_allow_html=True
 )
 
+feedback = 'We value your feedback! Help us shape the final product by sharing your thoughts.'
 
+styled_text = f'<div style="background-color: rgb(240, 242, 246); margin-top:15px; margin-bottom:15px; padding: 10px; border-radius: 2px;">{feedback} </div>'
+
+st.markdown(styled_text, unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <div>
+        <a target="_blank" href="https://forms.office.com/pages/responsepage.aspx?id=PsAfr2kbCUyPmtCeXh2-nxX71AiW0GVAvMIjaiJQpoxUOEkzTkVMS0E2NlVSUzJWSUc0SDZGTjlDUC4u">
+            <button type="button" class="btn btn-primary">Feedback Form</button>
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)

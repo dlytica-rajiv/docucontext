@@ -51,8 +51,7 @@ try:
      Embedding testing application.
     '''
     }
-    st.set_page_config(layout="wide", menu_items=menu_items)
-
+    
     llm_helper = LLMHelper()
 
     st.markdown("## Summarization")

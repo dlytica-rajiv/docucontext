@@ -2,9 +2,25 @@ import streamlit as st
 from utilities.helper import LLMHelper
 import os
 import traceback
-from streamlit_config import remove_footer_menu
 
-remove_footer_menu()
+def remove_footer_menu():
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            footer:after {
+                content:'© 2023 | Dlytica Inc.'; 
+                visibility: visible;
+                display: block;
+                position: relative;
+                color: black;
+                padding: 5px;
+                top: 2px;
+            }
+            </style>
+            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+remove_footer_menu()   
 def summarize():
     response = llm_helper.get_completion(get_prompt())
     st.session_state['summary'] = response

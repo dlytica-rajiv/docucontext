@@ -2,11 +2,11 @@ import os
 import streamlit as st
 from streamlit_chat import message
 from utilities.helper import LLMHelper
-from streamlit_config import configure_page,remove_footer_menu,get_img_with_href
+from streamlit_config import sidebar_content,configure_page,remove_footer_menu,get_img_with_href
 
 configure_page()
 remove_footer_menu()
-
+sidebar_content()
 
 
 
@@ -34,13 +34,13 @@ llm_helper = LLMHelper()
 
 ## Remove footer and setting option
 
-logo_html = get_img_with_href(os.path.join('images','dlytica.jpeg'), 'https://dlytica.com')
+logo_html = get_img_with_href(os.path.join('images','docucontext.png'), 'https://dlytica.com')
 
 col1, col2 = st.columns([1,1])
 with col1:
     # st.image(os.path.join('images','dlytica.jpeg'),"",200)
     st.markdown(logo_html, unsafe_allow_html=True)
-    st.markdown("<b>Here to deliver data driven AI and cloud solutions.</b><br>",unsafe_allow_html=True)
+    # st.markdown("<b>Here to deliver data driven AI and cloud solutions.</b><br>",unsafe_allow_html=True)
     # st.text("")
 
 col1, col2, col3 = st.columns([2,2,2])

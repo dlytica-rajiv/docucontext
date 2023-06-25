@@ -2,10 +2,11 @@ import streamlit as st
 import os
 import traceback
 from utilities.helper import LLMHelper
-from streamlit_config import configure_page,remove_footer_menu
+from streamlit_config import sidebar_content,configure_page,remove_footer_menu
 
 configure_page()
 remove_footer_menu()
+sidebar_content()
 try:
     # Set page layout to wide screen and menu item
     menu_items = {

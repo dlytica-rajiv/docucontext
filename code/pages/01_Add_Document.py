@@ -9,10 +9,11 @@ from utilities.helper import LLMHelper
 import uuid
 from redis.exceptions import ResponseError 
 from urllib import parse
-from streamlit_config import configure_page,remove_footer_menu
+from streamlit_config import sidebar_content,configure_page,remove_footer_menu
 
 configure_page()
 remove_footer_menu()
+sidebar_content()
     
 def upload_text_and_embeddings():
     file_name = f"{uuid.uuid4()}.txt"

@@ -2,7 +2,9 @@ import streamlit as st
 from utilities.helper import LLMHelper
 import os
 import traceback
+from streamlit_config import sidebar_content,configure_page,remove_footer_menu
 
+sidebar_content()
 def remove_footer_menu():
     hide_streamlit_style = """
             <style>

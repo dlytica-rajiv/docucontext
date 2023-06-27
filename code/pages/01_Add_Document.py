@@ -83,14 +83,14 @@ try:
             
             # pdf_display = f'<iframe src="{st.session_state["file_url"]}" width="700" height="1000" type="application/pdf"></iframe>'
 
-    with st.expander("Add text to the knowledge base", expanded=False):
-        col1, col2 = st.columns([3,1])
-        with col1: 
-            st.session_state['doc_text'] = st.text_area("Add a new text content and them click on 'Compute Embeddings'", height=600)
+    # with st.expander("Add text to the knowledge base", expanded=False):
+    #     col1, col2 = st.columns([3,1])
+    #     with col1: 
+    #         st.session_state['doc_text'] = st.text_area("Add a new text content and them click on 'Compute Embeddings'", height=600)
 
-        with col2:
-            st.session_state['embeddings_model'] = st.selectbox('Embeddings models', [llm_helper.get_embeddings_model()['doc']], disabled=True)
-            st.button("Compute Embeddings", on_click=upload_text_and_embeddings)
+    #     with col2:
+    #         st.session_state['embeddings_model'] = st.selectbox('Embeddings models', [llm_helper.get_embeddings_model()['doc']], disabled=True)
+    #         st.button("Compute Embeddings", on_click=upload_text_and_embeddings)
 
     with st.expander("Add documents in Batch", expanded=False):
         uploaded_files = st.file_uploader("Upload a document to add it to the Azure Storage Account", type=['pdf','jpeg','jpg','png', 'txt'], accept_multiple_files=True)
